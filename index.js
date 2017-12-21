@@ -9,9 +9,7 @@ const server = restify.createServer();
 let greetingCount = 0;
 
 // Configure middleware
-server.use(morgan('common', {
-  stream: fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'})
-}));
+server.use(morgan('common'));
 
 // Define response for root
 server.get('rest', (req, res, next) => {
